@@ -11,7 +11,7 @@ IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureContainer<ContainerBuilder>(b =>
     {
         b.RegisterModule(new FakeDateTimeModule());
-        b.RegisterModule(new DateTimeModule());
+        // b.RegisterModule(new DateTimeModule());
 
         b.Register(c => new MyConsumer { _dateTime = c.Resolve<IDateTime>() });
         b.RegisterType<AConsumer>();
